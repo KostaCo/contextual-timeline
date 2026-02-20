@@ -4,6 +4,7 @@ var timelineGroups = [
 ];
 
 var timelineItems = [
+    // Books
     { id: 1, group: "books", content: "Alice in Wonderland", start: "1865-01-01", className: "book" },
     { id: 2, group: "books", content: "Zločin i kazna", start: "1866-01-01", className: "book" },
     { id: 3, group: "books", content: "Ana Karenjina", start: "1878-01-01", className: "book" },
