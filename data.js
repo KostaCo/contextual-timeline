@@ -1,8 +1,10 @@
+// Names and tags of groups
 var timelineGroups = [
     { id: "books", content: "📚 Books" },
     { id: "history", content: "⚔️ History" }
 ];
 
+// Items to be displayed in the timeline
 var timelineItems = [
     // Books
     { id: 1, group: "books", content: "Ep o Gilgamešu", start: "-002100-01-01", end: "-001200-01-01", className: "book" },
@@ -31,7 +33,8 @@ var timelineItems = [
     { id: 24, group: "books", content: "The Metamorphosis", start: "1915-10-01", className: "book" },
     { id: 25, group: "books", content: "The Great Gatsby", start: "1925-04-10", className: "book" },
     
-    
     // History Events
-    { id: 101, group: "history", content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "history" }
+    { id: 101, group: "history",  content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "history" },
+    { id: 102, group: "history",  content: "Srednji vek", start: "0476-01-01", end: "1453-01-01", className: "history" }
+
 ];
