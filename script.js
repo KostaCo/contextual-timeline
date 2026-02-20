@@ -7,7 +7,7 @@ window.onload = function () {
     var items = new vis.DataSet(timelineItems);
 
     var options = {
-        height: '600px',
+        height: '800px',
         stack: true,
         start: '1850-01-01',
         end: '1930-01-01',
