@@ -1,0 +1,37 @@
+body { 
+    background-color: #1a1a1a; 
+    color: white; 
+    font-family: sans-serif; 
+    padding: 20px; 
+}
+
+#visualization {
+    width: 100%;
+    height: 600px;
+    background-color: #222;
+    border: 1px solid #444;
+}
+
+.controls {
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 8px 15px;
+    cursor: pointer;
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #555;
+}
+
+.vis-time-axis .vis-text { color: white !important; }
+.vis-labelset .vis-label { color: white !important; background: #333; border-bottom: 1px solid #444; }
+.vis-panel.vis-bottom, .vis-panel.vis-center, .vis-panel.vis-left { border-color: #555 !important; }
+
+.vis-item.book { background-color: #d5e8d4; color: black; border-color: #82b366; font-weight: bold; }
+.vis-item.history { background-color: #f8cecc; color: black; border-color: #b85450; font-weight: bold;}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Study Timeline</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>📚 My Historical Study Guide</h2>
+    <div class="controls">
+      <button onclick="fitTimeline()">Show All Data</button>
+      <span>(Use Ctrl + Scroll to zoom)</span>
+    </div>
+
+    <div id="visualization"></div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
