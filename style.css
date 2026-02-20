@@ -5,6 +5,10 @@ body {
     padding: 20px; 
 }
 
+h2 {
+    margin-top: -10px;
+}
+
 #visualization {
     width: 100%;
     height: 600px;
@@ -29,14 +33,25 @@ button:hover {
     background: #555;
 }
 
+.vis-timeline {
+    border: 2px solid #444444;
+    border-radius: 1px;
+}
+
 .vis-time-axis .vis-text { color: white !important; }
-.vis-labelset .vis-label { color: white !important; background: #333; border-bottom: 1px solid #444; }
+.vis-labelset .vis-label { color: white !important; background: #191919; border-bottom: 1px solid #444; }
 .vis-panel.vis-bottom, .vis-panel.vis-center, .vis-panel.vis-left { border-color: #555 !important; }
 
-.vis-item.book { background-color: #d5e8d4; color: black; border-color: #82b366; font-weight: bold; }
-.vis-item.history { background-color: #f8cecc; color: black; border-color: #b85450; font-weight: bold;}
+.vis-item.book { background-color: #16d40cbf; color: rgb(255, 255, 255); border-color: #82b366; font-weight: bold; }
+.vis-item.history { background-color: #c90101bf; color: rgb(255, 255, 255); border-color: #b85450; font-weight: bold;}
 
 .vis-label {
     display: flex;
     align-items: flex-end;
 }
+
+.vis-time-axis .vis-grid.vis-minor {
+    border-color: #444444;
+    border-width: 1px;
+}
+

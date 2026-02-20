@@ -9,6 +9,7 @@ window.onload = function () {
     var options = {
         height: '800px',
         stack: true,
+        margin: { item: 2},
         start: '1850-01-01',
         end: '1930-01-01',
         zoomSpeed: 0.5

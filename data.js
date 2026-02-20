@@ -7,6 +7,7 @@ var timelineItems = [
     // Books
     { id: 1, group: "books", content: "Ep o Gilgamešu", start: "-002100-01-01", end: "-001200-01-01", className: "book" },
     { id: 2, group: "books", content: "Stari zavet", start: "-001500-01-01", end: "-000400-01-01", className: "book" },
+    { id: 3, group: "books", content: "The Art of War", start: "-000450-01-01", className: "book" },
     { id: 4, group: "books", content: "Meditacije", start: "0170-01-01", className: "book" },
     { id: 5, group: "books", content: "Hamlet", start: "1623-01-01", className: "book" },
     { id: 6, group: "books", content: "Tvrdica", start: "1668-01-01", className: "book" },
@@ -29,7 +30,7 @@ var timelineItems = [
     { id: 23, group: "books", content: "Nečista krv", start: "1910-01-01", className: "book" },
     { id: 24, group: "books", content: "The Metamorphosis", start: "1915-10-01", className: "book" },
     { id: 25, group: "books", content: "The Great Gatsby", start: "1925-04-10", className: "book" },
-    { id: 3, group: "books", content: "The Art of War", start: "-000450-01-01", className: "book" },
+    
     
     // History Events
     { id: 101, group: "history", content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "history" }
