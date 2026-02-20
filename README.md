@@ -1,1 +1,1 @@
-Contextual Timeline is a tool that lets you see books and history side-by-side on a single, interactive map.
+Contextual Timeline is a web tool that lets you see books and history side-by-side on a single, interactive map.
