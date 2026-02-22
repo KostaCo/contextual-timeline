@@ -38,10 +38,16 @@ button:hover {
 .vis-time-axis .vis-text { color: white !important; }
 
 /* Styles the sidebar labels and adds a bottom separator line */
-.vis-labelset .vis-label { color: white !important; background: transparent !important; border-bottom: 1px solid #444; }
+.vis-labelset .vis-label { 
+    color: white !important; 
+    background: transparent !important; 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
 
 /* Changes the internal dividing lines between the panels (sidebar, grid, and axis) */
-.vis-panel.vis-bottom, .vis-panel.vis-center, .vis-panel.vis-left { border-color: #444444 !important; }
+.vis-panel.vis-bottom, .vis-panel.vis-center, .vis-panel.vis-left { 
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
 
 /* Custom styles for items of each group */
 .vis-item.book { background-color: #16d40cbf; color: rgb(255, 255, 255); border-color: #82b366; font-weight: bold; }
@@ -76,6 +82,11 @@ button:hover {
     background: none !important;
     /* Force this layer to catch scrolls and clicks */
     pointer-events: auto !important; 
+}
+
+/* Specifically target the horizontal line separating the groups in the grid */
+.vis-group {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
 /* 3. Make sure the background grid doesn't "block" the mouse */
