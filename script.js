@@ -14,27 +14,37 @@ window.onload = function () {
         margin: { 
             item: 2
         },
-        start: '1850-01-01', // Set the initial zoom level
-        end: '1930-01-01',
         zoomSpeed: 0.5,
         format: {
-    minorLabels: function(date, scale, step) {
-        if (scale === 'year') {
-            let year = date.get('year');
-            // If year is 0, return "0". Otherwise, return number as string.
-            // This naturally removes leading zeros and handles negative signs.
-            return year === 0 ? "0" : year.toString();
+            minorLabels: function(date, scale, step) {
+                let year = date.get('year');
+                let yearStr = year === 0 ? "0" : year.toString();
+            
+                // If we are looking at years or decades
+                if (scale === 'year') {
+                    return yearStr;
+                }
+                // If we zoom in to months/days, show "Month Year" or "Day Month Year"
+                if (scale === 'month') {
+                    return date.format('MMM') + ' ' + yearStr;
+                }
+                if (scale === 'day' || scale === 'weekday') {
+                    return date.format('DD MMM') + ' ' + yearStr;
+                }
+                // Fallback for extremely deep zooms (hours/minutes)
+                return date.format('HH:mm');
+            },
+            majorLabels: function(date, scale, step) {
+                let year = date.get('year');
+                let yearStr = year === 0 ? "0" : year.toString();
+            
+                if (scale === 'year') {
+                    return yearStr;
+                }
+                // If minor is 'month', major shows the Year
+                return yearStr;
+            }
         }
-        return date.format();
-    },
-    majorLabels: function(date, scale, step) {
-        if (scale === 'year') {
-            let year = date.get('year');
-            return year === 0 ? "0" : year.toString();
-        }
-        return date.format();
-    }
-}
     };
 
     // Create the timeline with the specified container, items, groups, and options
