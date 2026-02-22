@@ -63,3 +63,34 @@ button:hover {
     border-color: #444444;
     border-width: 1px;
 }
+
+/* 1. Ensure the main timeline container captures mouse events */
+.vis-timeline {
+    border: 2px solid #444444;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1a1a1a 0%, #222 50%, #1a1a1a 100%) !important;
+    position: relative;
+    /* Remove overflow: hidden if it's interfering with the mouse */
+}
+
+/* 2. This is the crucial part: Ensure the interaction layer is on top */
+.vis-panel.vis-center, 
+.vis-panel.vis-bottom, 
+.vis-panel.vis-left {
+    background-color: transparent !important;
+    background: none !important;
+    /* Force this layer to catch scrolls and clicks */
+    pointer-events: auto !important; 
+}
+
+/* 3. Make sure the background grid doesn't "block" the mouse */
+.vis-grid {
+    pointer-events: none !important;
+    z-index: 0;
+}
+
+/* 4. Ensure items remain interactive */
+.vis-item {
+    pointer-events: auto !important;
+    z-index: 10;
+}
