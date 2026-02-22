@@ -33,17 +33,12 @@ button:hover {
     background: #555;
 }
 
- /* Draws the main border around the whole project */
-.vis-timeline {
-    border: 2px solid #444444;
-    border-radius: 10px;
-}
 
 /* Changes the color of the dates on the bottom axis */
 .vis-time-axis .vis-text { color: white !important; }
 
 /* Styles the sidebar labels and adds a bottom separator line */
-.vis-labelset .vis-label { color: white !important; background: #191919; border-bottom: 1px solid #444; }
+.vis-labelset .vis-label { color: white !important; background: transparent !important; border-bottom: 1px solid #444; }
 
 /* Changes the internal dividing lines between the panels (sidebar, grid, and axis) */
 .vis-panel.vis-bottom, .vis-panel.vis-center, .vis-panel.vis-left { border-color: #444444 !important; }
@@ -64,13 +59,13 @@ button:hover {
     border-width: 1px;
 }
 
-/* 1. Ensure the main timeline container captures mouse events */
 .vis-timeline {
     border: 2px solid #444444;
     border-radius: 10px;
     background: linear-gradient(90deg, #1a1a1a 0%, #222 50%, #1a1a1a 100%) !important;
     position: relative;
-    /* Remove overflow: hidden if it's interfering with the mouse */
+    /* This ensures children don't leak out of rounded corners */
+    overflow: hidden; 
 }
 
 /* 2. This is the crucial part: Ensure the interaction layer is on top */
@@ -93,4 +88,17 @@ button:hover {
 .vis-item {
     pointer-events: auto !important;
     z-index: 10;
+}
+
+/* Make major grid lines (centuries/decades) actually glow */
+.vis-grid.vis-major {
+    border-left: 1px solid rgba(255, 255, 255, 0.5) !important;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+    z-index: 1;
+}
+
+/* Optional: Make minor grid lines slightly visible but subtle */
+.vis-grid.vis-minor {
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+    z-index: 1;
 }
