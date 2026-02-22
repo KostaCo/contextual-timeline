@@ -16,7 +16,25 @@ window.onload = function () {
         },
         start: '1850-01-01', // Set the initial zoom level
         end: '1930-01-01',
-        zoomSpeed: 0.5
+        zoomSpeed: 0.5,
+        format: {
+    minorLabels: function(date, scale, step) {
+        if (scale === 'year') {
+            let year = date.get('year');
+            // If year is 0, return "0". Otherwise, return number as string.
+            // This naturally removes leading zeros and handles negative signs.
+            return year === 0 ? "0" : year.toString();
+        }
+        return date.format();
+    },
+    majorLabels: function(date, scale, step) {
+        if (scale === 'year') {
+            let year = date.get('year');
+            return year === 0 ? "0" : year.toString();
+        }
+        return date.format();
+    }
+}
     };
 
     // Create the timeline with the specified container, items, groups, and options
