@@ -21,6 +21,23 @@ window.onload = function () {
 
     // Create the timeline with the specified container, items, groups, and options
     timeline = new vis.Timeline(container, items, groups, options);
+    timeline.on('click', function (properties) {
+    if (properties.item) {
+        // Get the clicked item using its ID
+        var item = items.get(properties.item);
+
+        // Check if the clicked item belongs to the "history" group and has an end date
+        if (item.group === "history" && item.end) {
+            // Focus the timeline on the clicked historical period with a smooth animation
+            timeline.setWindow(item.start, item.end, {
+                animation: {
+                    duration: 1000, // Animation duration in milliseconds
+                    easingFunction: 'easeInOutQuad'
+                }
+            });
+        }
+    }
+});
 };
 
 // Function to fit the timeline to show all items when the button is clicked
