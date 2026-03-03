@@ -54,20 +54,33 @@ window.onload = function () {
     // Create the timeline with the specified container, items, groups, and options
     timeline = new vis.Timeline(container, items, groups, options);
     timeline.on('click', function (properties) {
-    if (properties.item) {
-        // Get the clicked item using its ID
-        var item = items.get(properties.item);
+        let itemId = properties.item;
 
-        // CASE 1: Item belongs to the "history" group
-        if (item.group === "history" && item.end) {
-            // Focus the timeline on the clicked historical period with a smooth animation
+    if (!itemId && properties.event) {
+        let target = properties.event.target.closest('.vis-item.vis-background');
+        if (target) {
+            let clickedTime = properties.time;
+            itemId = items.get({
+                filter: function (item) {
+                    return item.type === 'background' && 
+                           clickedTime >= new Date(item.start) && 
+                           clickedTime <= new Date(item.end);
+                }
+            })[0]?.id;
+        }
+    }
+
+    if (itemId) {
+        let item = items.get(itemId);
+        
+        if (item.type && item.type === "background" && item.end) {
             timeline.setWindow(item.start, item.end, {
                 animation: {
                     duration: 1000, // Animation duration in milliseconds
                     easingFunction: 'easeInOutQuad'
                 }
             });
-        }
+        } 
         // CASE 2: Item belongs to the "books" group
         else if (item.group === "books") {
             if (item.end) {
