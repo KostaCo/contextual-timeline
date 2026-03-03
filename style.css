@@ -5,8 +5,8 @@
     --border-soft: rgba(255, 255, 255, 0.15);
     --text-white: #fff;
     --green-book: #16d40c;
-    --red-hist: #ffffff4a;
-    --red-hist-hover: #ffffff34;
+    --red-hist: #ff000079;
+    --red-hist-hover: #ff0000;
 
 }
 
@@ -79,16 +79,24 @@ button:hover { background: #555; }
     z-index: 1 !important;
 }
 
-.vis-item.book { background-color: rgba(22, 212, 12, 0.75); border-color: #82b366; }
-.vis-item.history { 
+.vis-item.book { 
+    background-color: rgba(22, 212, 12, 0.75); 
+    border-color: #82b366; 
+}
+.vis-item.era { 
     background-color: var(--red-hist); 
     border-color: #fff;
     border-left: 1px solid #fff !important; 
     border-right: 1px solid #fff !important;
     border-top: 1px solid #fff !important;
 }
+.vis-item.history { 
+    background-color: hsla(251, 100%, 50%, 0.75); 
+    border-color: #002fff; 
+}
 
 .vis-item.book:hover { background-color: var(--green-book); }
+.vis-item.history:hover { background-color: var(--red-hist-hover); }
 
 /* --- Grid & Lines --- */
 .vis-grid { pointer-events: none !important; z-index: 0; }
