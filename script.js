@@ -14,7 +14,6 @@ window.onload = function () {
         margin: { 
             item: 2
         },
-        zoomSpeed: 0.5,
         format: {
             minorLabels: function(date, scale, step) {
                 let year = date.get('year');
