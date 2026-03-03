@@ -44,7 +44,11 @@ window.onload = function () {
                 // If minor is 'month', major shows the Year
                 return yearStr;
             }
-        }
+        },
+        hiddenDates: [
+            { start: "0000-01-01 00:00:00", 
+                end: "0001-01-01 00:00:00" },
+        ],
     };
 
     // Create the timeline with the specified container, items, groups, and options
