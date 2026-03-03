@@ -5,7 +5,9 @@
     --border-soft: rgba(255, 255, 255, 0.15);
     --text-white: #fff;
     --green-book: #16d40c;
-    --red-hist: #c901017a;
+    --red-hist: #ffffff4a;
+    --red-hist-hover: #ffffff34;
+
 }
 
 /* --- Base Elements --- */
@@ -78,10 +80,9 @@ button:hover { background: #555; }
 }
 
 .vis-item.book { background-color: rgba(22, 212, 12, 0.75); border-color: #82b366; }
-.vis-item.history { background-color: rgba(201, 1, 1, 0.75); border-color: #b85450; }
+.vis-item.history { background-color: var(--red-hist); border-color: #fff;}
 
 .vis-item.book:hover { background-color: var(--green-book); }
-.vis-item.history:hover { background-color: var(--red-hist); }
 
 /* --- Grid & Lines --- */
 .vis-grid { pointer-events: none !important; z-index: 0; }
