@@ -55,9 +55,9 @@ var timelineItems = [
     { id: 46, group: "books", content: "Harry Potter serijal", start: "1997-06-26", end: "2016-12-31", className: "book" },
     
     // History Events
-    { id: 101, group: "history",  content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "history" },
-    { id: 102, group: "history",  content: "Srednji vek", start: "0476-01-01", end: "1453-01-01", className: "history" },
-    { id: 103, group: "history",  content: "Novi vek", start: "1453-01-01", end: "1914-01-01", className: "history" },
-    { id: 104, group: "history",  content: "Savremeno doba", start: "1914-01-01", end: "2026-01-01", className: "history" },
+    { id: 101, content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "history", type: "background" },
+    { id: 102, content: "Srednji vek", start: "0476-01-01", end: "1453-01-01", className: "history", type: "background" },
+    { id: 103, content: "Novi vek", start: "1453-01-01", end: "1914-01-01", className: "history", type: "background" },
+    { id: 104, content: "Savremeno doba", start: "1914-01-01", end: "2026-01-01", className: "history", type: "background" },
 
 ];
