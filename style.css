@@ -2,12 +2,27 @@
 :root {
     --bg-dark: #1a1a1a;
     --bg-panel: #222;
-    --border-soft: rgba(255, 255, 255, 0.15);
+    --border-soft: #ffffff26;
+    --border-outer: #444;
     --text-white: #fff;
-    --green-book: #16d40c;
-    --red-hist: #ff000079;
-    --red-hist-hover: #ff0000;
+    --button-background: #444;
+    --button-hover: #555;
+    --button-border: #666;
+    --grid-major-border: #ffffff80;
+    --grid-major-shadow: #ffffff99;
 
+    --book-background: #16d40cbf;
+    --book-border: #82b366;
+    --book-hover: #16d40c;
+    --book-range: #82b366b3;
+    --book-range-hover: rgba(130, 179, 102, 1);
+
+    --history-background: #2f00ffbf;
+    --history-border: #002fff;
+    --history-hover: #0088ff;
+
+    --era-background: #ff000079;
+    --era-border: #fff;
 }
 
 /* --- Base Elements --- */
@@ -24,7 +39,7 @@ h2 { margin-top: -10px; }
     width: 100%;
     height: 600px;
     background-color: var(--bg-panel);
-    border: 1px solid #444;
+    border: 1px solid #00000000; /* invisible */
 }
 
 .controls { margin-bottom: 15px; }
@@ -32,14 +47,14 @@ h2 { margin-top: -10px; }
 button {
     padding: 8px 15px;
     cursor: pointer;
-    background: #444;
+    background: var(--button-background);
     color: var(--text-white);
-    border: 1px solid #666;
+    border: 1px solid var(--button-border);
     border-radius: 4px;
     transition: background 0.2s;
 }
 
-button:hover { background: #555; }
+button:hover { background: var(--button-hover); }
 
 /* --- Vis.js Global Overrides --- */
 .vis-time-axis .vis-text,
@@ -61,7 +76,7 @@ button:hover { background: #555; }
 }
 
 .vis-timeline {
-    border: 2px solid #444;
+    border: 2px solid var(--border-outer);
     border-radius: 10px;
     background: linear-gradient(90deg, var(--bg-dark) 0%, var(--bg-panel) 50%, var(--bg-dark) 100%) !important;
     overflow: hidden;
@@ -80,23 +95,23 @@ button:hover { background: #555; }
 }
 
 .vis-item.book { 
-    background-color: rgba(22, 212, 12, 0.75); 
-    border-color: #82b366; 
+    background-color: var(--book-background); 
+    border-color: var(--book-border); 
 }
 .vis-item.era { 
-    background-color: var(--red-hist); 
-    border-color: #fff;
-    border-left: 1px solid #fff !important; 
-    border-right: 1px solid #fff !important;
-    border-top: 1px solid #fff !important;
+    background-color: var(--era-background); 
+    border-color: var(--era-border);
+    border-left: 1px solid var(--era-border) !important; 
+    border-right: 1px solid var(--era-border) !important;
+    border-top: 1px solid var(--era-border) !important;
 }
 .vis-item.history { 
-    background-color: hsla(251, 100%, 50%, 0.75); 
-    border-color: #002fff; 
+    background-color: var(--history-background); 
+    border-color: var(--history-border); 
 }
 
-.vis-item.book:hover { background-color: var(--green-book); }
-.vis-item.history:hover { background-color: var(--red-hist-hover); }
+.vis-item.book:hover { background-color: var(--book-hover); }
+.vis-item.history:hover { background-color: var(--history-hover); }
 
 /* --- Grid & Lines --- */
 .vis-grid { pointer-events: none !important; z-index: 0; }
@@ -104,8 +119,8 @@ button:hover { background: #555; }
 
 .vis-grid.vis-minor { border-left: 1px solid var(--border-soft) !important; z-index: 1; }
 .vis-grid.vis-major { 
-    border-left: 1px solid rgba(255, 255, 255, 0.5) !important; 
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+    border-left: 1px solid var(--grid-major-border) !important; 
+    filter: drop-shadow(0 0 4px var(--grid-major-shadow)) !important;
     z-index: 1; 
 }
 
@@ -121,7 +136,7 @@ button:hover { background: #555; }
     content: '';
     position: absolute;
     pointer-events: none;
-    background-color: rgba(130, 179, 102, 0.6);
+    background-color: var(--book-range);
 }
 
 /* Vertical Lines */
@@ -144,10 +159,10 @@ button:hover { background: #555; }
 .vis-item.book.vis-range:hover::after,
 .vis-item.book.vis-range:hover .vis-item-content::before,
 .vis-item.book.vis-range:hover .vis-item-content::after {
-    background-color: rgba(130, 179, 102, 1);
+    background-color: var(--book-range-hover);
 }
 
 .vis-item.book.vis-range:hover .vis-item-content::before,
 .vis-item.book.vis-range:hover .vis-item-content::after {
-    box-shadow: 0 0 8px rgba(130, 179, 102, 0.8);
+    box-shadow: 0 0 8px var(--book-range-hover);
 }
