@@ -22,10 +22,11 @@
     --history-hover: #0088ff;
     --history-range: #6776bab3;
     --history-range-hover: #5b6aae;
+    --era-range: #ff0000b3;
 
     --era-background: #ff000079;
     --era-border: #fff;
-    /*TODO --era-hover */
+    --era-hover: #ff0000c7;
 }
 
 /* --- Base Elements --- */
@@ -115,6 +116,7 @@ button:hover { background: var(--button-hover); }
 
 .vis-item.book:hover { background-color: var(--book-hover); }
 .vis-item.history:hover { background-color: var(--history-hover); }
+.vis-item.era:hover { background-color: var(--era-hover); }
 
 /* --- Grid & Lines --- */
 .vis-grid { pointer-events: none !important; z-index: 0; }
