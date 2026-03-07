@@ -5,11 +5,14 @@
     --border-soft: #ffffff26;
     --border-outer: #444;
     --text-white: #fff;
+
     --button-background: #ffffff0d;
     --button-hover: #ffffff26;
     --button-hover-shadow: #ffffff40;
+    --button-hover-border: #ffffff;
     --button-border: #ffffff33;
     --button-active: #ffffff40;
+
     --controls-span: #ffffff80;
     --grid-major-border: #ffffff80;
     --grid-major-shadow: #ffffff99;
@@ -76,7 +79,7 @@ button {
 
 button:hover {
     background: var(--button-hover);
-    border-color: var(--book-border);
+    border-color: var(--button-hover-border);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     transform: translateY(-1px);
 }
