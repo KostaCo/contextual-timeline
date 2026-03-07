@@ -15,14 +15,17 @@
     --book-border: #82b366;
     --book-hover: #16d40c;
     --book-range: #82b366b3;
-    --book-range-hover: rgba(130, 179, 102, 1);
+    --book-range-hover: #82b366;
 
     --history-background: #2f00ffbf;
     --history-border: #002fff;
     --history-hover: #0088ff;
+    --history-range: #6776bab3;
+    --history-range-hover: #5b6aae;
 
     --era-background: #ff000079;
     --era-border: #fff;
+    /*TODO --era-hover */
 }
 
 /* --- Base Elements --- */
@@ -128,6 +131,7 @@ button:hover { background: var(--button-hover); }
 
 /* --- Custom Range Indicators (Pseudo-elements) --- */
 .vis-item.book.vis-range { overflow: visible !important; }
+.vis-item.vis-item.history.vis-range { overflow: visible !important; }
 
 .vis-item.book.vis-range::before, 
 .vis-item.book.vis-range::after,
@@ -139,12 +143,28 @@ button:hover { background: var(--button-hover); }
     background-color: var(--book-range);
 }
 
+.vis-item.vis-item.history.vis-range::before, 
+.vis-item.vis-item.history.vis-range::after,
+.vis-item.vis-item.history.vis-range .vis-item-content::before,
+.vis-item.vis-item.history.vis-range .vis-item-content::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    background-color: var(--history-range);
+}
+
 /* Vertical Lines */
 .vis-item.book.vis-range::before, .vis-item.book.vis-range::after {
     top: 100%; width: 1px; height: 600px; z-index: -1; mix-blend-mode: screen;
 }
 .vis-item.book.vis-range::before { left: 0; }
 .vis-item.book.vis-range::after { left: 100%; }
+
+.vis-item.vis-item.history.vis-range::before, .vis-item.vis-item.history.vis-range::after {
+    top: 100%; width: 1px; height: 600px; z-index: -1; mix-blend-mode: screen;
+}
+.vis-item.vis-item.history.vis-range::before { left: 0; }
+.vis-item.vis-item.history.vis-range::after { left: 100%; }
 
 /* Dots */
 .vis-item.book.vis-range .vis-item-content::before, 
@@ -154,6 +174,13 @@ button:hover { background: var(--button-hover); }
 .vis-item.book.vis-range .vis-item-content::before { left: -5px; }
 .vis-item.book.vis-range .vis-item-content::after { left: calc(100% - 5px); }
 
+.vis-item.vis-item.history.vis-range .vis-item-content::before, 
+.vis-item.vis-item.history.vis-range .vis-item-content::after {
+    top: 554px; width: 10px; height: 10px; border-radius: 50%; z-index: 20;
+}
+.vis-item.vis-item.history.vis-range .vis-item-content::before { left: -5px; }
+.vis-item.vis-item.history.vis-range .vis-item-content::after { left: calc(100% - 5px); }
+
 /* Hover Effects for Indicators */
 .vis-item.book.vis-range:hover::before, 
 .vis-item.book.vis-range:hover::after,
@@ -162,7 +189,19 @@ button:hover { background: var(--button-hover); }
     background-color: var(--book-range-hover);
 }
 
+.vis-item.vis-item.history.vis-range:hover::before, 
+.vis-item.vis-item.history.vis-range:hover::after,
+.vis-item.vis-item.history.vis-range:hover .vis-item-content::before,
+.vis-item.vis-item.history.vis-range:hover .vis-item-content::after {
+    background-color: var(--history-range-hover);
+}
+
 .vis-item.book.vis-range:hover .vis-item-content::before,
 .vis-item.book.vis-range:hover .vis-item-content::after {
     box-shadow: 0 0 8px var(--book-range-hover);
+}
+
+.vis-item.vis-item.history.vis-range:hover .vis-item-content::before,
+.vis-item.vis-item.history.vis-range:hover .vis-item-content::after {
+    box-shadow: 0 0 8px var(--history-range-hover);
 }
