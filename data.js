@@ -61,5 +61,5 @@ var timelineItems = [
     { id: 1003, content: "Savremeno doba", start: "1914-01-01", end: "2026-01-01", className: "era", type: "background" },
 
     // Historical events
-    { id: 2000, group: "history", content: "Pad Rima", start: "0476-09-04", className: "history" },
+    { id: 2000, group: "history", content: "Jevreji naseljavaju Hanan", start: "-001200-01-01", end: "-001030-01-01", className: "history" },
 ];
