@@ -55,11 +55,11 @@ var timelineItems = [
     { id: 46, group: "books", content: "Harry Potter serijal", start: "1997-06-26", end: "2016-12-31", className: "book" },
     
     // Eras
-    { id: 101, content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "era", type: "background" },
-    { id: 102, content: "Srednji vek", start: "0476-01-01", end: "1453-01-01", className: "era", type: "background" },
-    { id: 103, content: "Novi vek", start: "1453-01-01", end: "1914-01-01", className: "era", type: "background" },
-    { id: 104, content: "Savremeno doba", start: "1914-01-01", end: "2026-01-01", className: "era", type: "background" },
+    { id: 1000, content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "era", type: "background" },
+    { id: 1001, content: "Srednji vek", start: "0476-01-01", end: "1453-01-01", className: "era", type: "background" },
+    { id: 1002, content: "Novi vek", start: "1453-01-01", end: "1914-01-01", className: "era", type: "background" },
+    { id: 1003, content: "Savremeno doba", start: "1914-01-01", end: "2026-01-01", className: "era", type: "background" },
 
     // Historical events
-    { id: 201, group: "history", content: "Pad Rima", start: "0476-09-04", className: "history" },
+    { id: 2000, group: "history", content: "Pad Rima", start: "0476-09-04", className: "history" },
 ];
