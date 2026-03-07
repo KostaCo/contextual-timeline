@@ -1,6 +1,6 @@
 /* --- Variables for easy updates --- */
 :root {
-    --bg-dark: #1a1a1a;
+    --bg-dark: #191919;
     --bg-panel: #222;
     --border-soft: #ffffff26;
     --border-outer: #444;
@@ -40,11 +40,11 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-white);
     font-family: 'Inter', sans-serif;
-    padding: 20px;
+    padding: 2vh;
 }
 
 h2 { 
-    margin-top: -10px; 
+    margin-top: -1vh; 
     font-family: 'Inter', sans-serif;
     height: 3vh;
 }
@@ -57,7 +57,7 @@ h2 {
 }
 
 .controls { 
-    margin-bottom: 15px; 
+    margin-bottom: 1.5vh; 
     height: 5vh;
 }
 
