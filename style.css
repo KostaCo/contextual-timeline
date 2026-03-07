@@ -46,17 +46,19 @@ body {
 h2 { 
     margin-top: -10px; 
     font-family: 'Inter', sans-serif;
+    height: 3vh;
 }
 
 #visualization {
     width: 100%;
-    height: 600px;
+    height: 80vh;
     background-color: var(--bg-panel);
     border: 1px solid #00000000; /* invisible */
 }
 
 .controls { 
     margin-bottom: 15px; 
+    height: 5vh;
 }
 
 button {

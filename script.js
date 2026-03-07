@@ -9,7 +9,7 @@ window.onload = function () {
     var items = new vis.DataSet(timelineItems);
 
     var options = {
-        height: '750px',
+        height: '80vh',
         stack: true, // Stack items on top of each other when they overlap
         margin: { 
             item: 2
