@@ -67,8 +67,8 @@ button {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    padding: 10px 20px;
-    margin-right: 10px;
+    padding: 1.5vh 2.5vh;
+    margin-right: 1vh;
     cursor: pointer;
     background: var(--button-background);
     color: var(--text-white);
