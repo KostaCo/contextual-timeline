@@ -53,6 +53,8 @@ var timelineItems = [
     { id: 44, group: "books", content: "Children of Dune", start: "1976-01-01", className: "book" },
     { id: 45, group: "books", content: "The Sandman (Gaiman)", start: "1988-01-01", end: "1996-12-31", className: "book" },
     { id: 46, group: "books", content: "Harry Potter serijal", start: "1997-06-26", end: "2016-12-31", className: "book" },
+    { id: 47, group: "books", content: "Grčki mitovi", start: "-001400-01-01", end: "-001100-01-01", className: "book" },
+
     
     // Eras
     { id: 1000, content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "era", type: "background" },
@@ -62,4 +64,6 @@ var timelineItems = [
 
     // Historical events
     { id: 2000, group: "history", content: "Jevreji naseljavaju Hanan", start: "-001200-01-01", end: "-001030-01-01", className: "history" },
+    { id: 2001, group: "history", content: "Minojska civilizacija", start: "-003000-01-01", end: "-001400-01-01", className: "history" },
+    { id: 2002, group: "history", content: "Mikenska civilizacija", start: "-001600-01-01", end: "-001100-01-01", className: "history" }
 ];
