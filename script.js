@@ -55,7 +55,7 @@ window.onload = function () {
                 const levelOffset = level * 35;
                                 return `<div class="custom-era-label" 
                             data-level="${level}" 
-                            style="transform: translateY(${levelOffset}px)">
+                            style="transform: translateY(${levelOffset}px);pointer-events: auto !important;">
                             ${item.content}
                         </div>`;
             }
@@ -76,7 +76,7 @@ window.onload = function () {
         let itemId = properties.item;
 
     if (!itemId && properties.event) {
-        let target = properties.event.target.closest('.vis-item.vis-background');
+        let target = properties.event.target.closest('.custom-era-label');
         if (target) {
             let clickedTime = properties.time;
             itemId = items.get({
@@ -92,14 +92,15 @@ window.onload = function () {
     if (itemId) {
         let item = items.get(itemId);
         
+        // Sada se ovaj deo izvršava samo ako je itemId preživeo gornju proveru (klik na label)
         if (item.type && item.type === "background" && item.end) {
             timeline.setWindow(item.start, item.end, {
                 animation: {
-                    duration: 1000, // Animation duration in milliseconds
+                    duration: 1000,
                     easingFunction: 'easeInOutQuad'
                 }
             });
-        } 
+        }
         // CASE 2: Item belongs to the "books" group
         else if (item.group === "books" || item.group === "history") {
             if (item.end) {

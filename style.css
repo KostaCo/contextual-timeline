@@ -161,6 +161,7 @@ button:active {
     will-change: transform;
     transition: none;
 }
+.custom-era-label:hover { background-color: var(--era-hover); }
 
 .vis-item.book { 
     background-color: var(--book-background); 
@@ -180,7 +181,6 @@ button:active {
 
 .vis-item.book:hover { background-color: var(--book-hover); }
 .vis-item.history:hover { background-color: var(--history-hover); }
-.vis-item.era:hover { background-color: var(--era-hover); }
 
 /* --- Grid & Lines --- */
 .vis-grid { pointer-events: none !important; z-index: 0; }
