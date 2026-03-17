@@ -159,28 +159,42 @@ function fitTimeline() {
 }
 
 // Function for making era labels allways visible if user is looking at that era on timeline
+let ticking = false;
+
 function handleStickyLabels() {
-    const timelineContainer = document.getElementById('visualization');
-    const centerPanel = document.querySelector('.vis-panel.vis-center');
-    if (!timelineContainer || !centerPanel || !timeline) return;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const timelineContainer = document.getElementById('visualization');
+            const centerPanel = document.querySelector('.vis-panel.vis-center');
+            if (!timelineContainer || !centerPanel) {
+                ticking = false;
+                return;
+            }
 
-    const containerRect = timelineContainer.getBoundingClientRect();
-    const labels = document.querySelectorAll('.custom-era-label');
+            const containerRect = timelineContainer.getBoundingClientRect();
+            const labels = document.querySelectorAll('.custom-era-label');
 
-    labels.forEach(label => {
-        const itemElement = label.closest('.vis-item.vis-background');
-        if (!itemElement) return;
+            labels.forEach(label => {
+                const itemElement = label.closest('.vis-item.vis-background');
+                if (!itemElement) return;
 
-        const eraRect = itemElement.getBoundingClientRect();
-        
-        const level = parseInt(label.getAttribute('data-level')) || 0;
-        const levelOffset = level * 35;
-        
-        let verticalDrift = containerRect.top - eraRect.top;
-        
-        let finalY = Math.max(0, verticalDrift) + levelOffset + 10;
-        let finalX = 10; 
+                const eraRect = itemElement.getBoundingClientRect();
+                const level = parseInt(label.getAttribute('data-level')) || 0;
+                const levelOffset = level * 35;
 
-        label.style.transform = `translate(${finalX}px, ${finalY}px)`;
-    });
+                // Računamo vertikalni drift
+                let verticalDrift = containerRect.top - eraRect.top;
+                
+                // Finalna pozicija sa malo lufta (10px)
+                let finalY = Math.max(0, verticalDrift) + levelOffset + 10;
+                let finalX = 10;
+
+                // Primenjujemo transformaciju
+                label.style.transform = `translate(${finalX}px, ${finalY}px)`;
+            });
+
+            ticking = false;
+        });
+        ticking = true;
+    }
 }
