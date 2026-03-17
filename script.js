@@ -1,4 +1,4 @@
-var timeline;
+let timeline;
 
 // Initialize the timeline when the page loads
 window.onload = function () {
@@ -7,7 +7,7 @@ window.onload = function () {
     // Convert the groups and items from data.js into vis.js DataSet format
     var groups = new vis.DataSet(timelineGroups);
     var items = new vis.DataSet(timelineItems);
-
+    
     var options = {
         height: '80vh',
         stack: true, // Stack items on top of each other when they overlap
@@ -48,10 +48,30 @@ window.onload = function () {
             { start: "0000-01-01 00:00:00", 
                 end: "0001-01-01 00:00:00" },
         ],
+        //Template for era labels
+        template: function (item) {
+            if (item.type === 'background') {
+                const level = item.level || 0;
+                const levelOffset = level * 35;
+                                return `<div class="custom-era-label" 
+                            data-level="${level}" 
+                            style="transform: translateY(${levelOffset}px)">
+                            ${item.content}
+                        </div>`;
+            }
+            return item.content;
+        }
     };
 
     // Create the timeline with the specified container, items, groups, and options
     timeline = new vis.Timeline(container, items, groups, options);
+
+    document.addEventListener('scroll', handleStickyLabels, true);
+    timeline.on('rangechange', handleStickyLabels);
+    timeline.on('changed', () => setTimeout(handleStickyLabels, 10));
+
+    handleStickyLabels();
+
     timeline.on('click', function (properties) {
         let itemId = properties.item;
 
@@ -135,4 +155,31 @@ window.onload = function () {
 // Function to fit the timeline to show all items when the button is clicked
 function fitTimeline() {
     timeline.fit();
+}
+
+// Function for making era labels allways visible if user is looking at that era on timeline
+function handleStickyLabels() {
+    const timelineContainer = document.getElementById('visualization');
+    const centerPanel = document.querySelector('.vis-panel.vis-center');
+    if (!timelineContainer || !centerPanel || !timeline) return;
+
+    const containerRect = timelineContainer.getBoundingClientRect();
+    const labels = document.querySelectorAll('.custom-era-label');
+
+    labels.forEach(label => {
+        const itemElement = label.closest('.vis-item.vis-background');
+        if (!itemElement) return;
+
+        const eraRect = itemElement.getBoundingClientRect();
+        
+        const level = parseInt(label.getAttribute('data-level')) || 0;
+        const levelOffset = level * 35;
+        
+        let verticalDrift = containerRect.top - eraRect.top;
+        
+        let finalY = Math.max(0, verticalDrift) + levelOffset + 10;
+        let finalX = 10; 
+
+        label.style.transform = `translate(${finalX}px, ${finalY}px)`;
+    });
 }

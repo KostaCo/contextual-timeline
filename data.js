@@ -1,11 +1,11 @@
 // Names and tags of groups
-var timelineGroups = [
+let timelineGroups = [
     { id: "books", content: "📚 Books" },
     { id: "history", content: "⚔️ History" }
 ];
 
 // Items to be displayed in the timeline
-var timelineItems = [
+let books = [
     // Books
     { id: 1, group: "books", content: "Ep o Gilgamešu", start: "-002100-01-01", end: "-001200-01-01", className: "book" },
     { id: 2, group: "books", content: "Stari zavet", start: "-001500-01-01", end: "-000400-01-01", className: "book" },
@@ -53,17 +53,48 @@ var timelineItems = [
     { id: 44, group: "books", content: "Children of Dune", start: "1976-01-01", className: "book" },
     { id: 45, group: "books", content: "The Sandman (Gaiman)", start: "1988-01-01", end: "1996-12-31", className: "book" },
     { id: 46, group: "books", content: "Harry Potter serijal", start: "1997-06-26", end: "2016-12-31", className: "book" },
-    { id: 47, group: "books", content: "Grčki mitovi", start: "-001400-01-01", end: "-001100-01-01", className: "book" },
+    { id: 47, group: "books", content: "Grčki mitovi", start: "-001400-01-01", end: "-001100-01-01", className: "book" }
+]
 
-    
+let eras = [
     // Eras
     { id: 1000, content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "era", type: "background" },
     { id: 1001, content: "Srednji vek", start: "0476-01-01", end: "1453-01-01", className: "era", type: "background" },
     { id: 1002, content: "Novi vek", start: "1453-01-01", end: "1914-01-01", className: "era", type: "background" },
-    { id: 1003, content: "Savremeno doba", start: "1914-01-01", end: "2026-01-01", className: "era", type: "background" },
+    { id: 1003, content: "Savremeno doba", start: "1914-01-01", end: "2026-01-01", className: "era", type: "background" }]
 
+let historicalEvents = [
     // Historical events
     { id: 2000, group: "history", content: "Jevreji naseljavaju Hanan", start: "-001200-01-01", end: "-001030-01-01", className: "history" },
     { id: 2001, group: "history", content: "Minojska civilizacija", start: "-003000-01-01", end: "-001400-01-01", className: "history" },
     { id: 2002, group: "history", content: "Mikenska civilizacija", start: "-001600-01-01", end: "-001100-01-01", className: "history" }
 ];
+
+
+// Function for distributing eras into different slots(vertical positions)
+function calculateEraLevels(eras) {
+    const sortedEras = [...eras].sort((a, b) => {
+        const startA = new Date(a.start).getTime();
+        const startB = new Date(b.start).getTime();
+        if (startA !== startB) return startA - startB;
+        return new Date(b.end).getTime() - new Date(a.end).getTime();
+    });
+
+    const slots = [];
+
+    return sortedEras.map(era => {
+        const start = new Date(era.start).getTime();
+        const end = new Date(era.end).getTime();
+        
+        let currentSlot = 0;
+        while (slots[currentSlot] > start) {
+            currentSlot++;
+        }
+        
+        slots[currentSlot] = end;
+        era.level = currentSlot;
+        return era;
+    });
+}
+
+let timelineItems = [...books, ...historicalEvents, ...calculateEraLevels(eras)];
