@@ -8,7 +8,7 @@ let timelineGroups = [
 let books = [
     // Books
     { id: 1, group: "books", content: "Ep o Gilgamešu", start: "-002100-01-01", end: "-001200-01-01", className: "book" },
-    { id: 2, group: "books", content: "Stari zavet", start: "-001500-01-01", end: "-000400-01-01", className: "book" },
+    { id: 2, group: "books", content: "Stari zavet", start: "-001450-01-01", end: "-000400-01-01", className: "book" },
     { id: 3, group: "books", content: "The Art of War", start: "-000450-01-01", className: "book" },
     { id: 4, group: "books", content: "Meditacije", start: "0170-01-01", className: "book" },
     { id: 5, group: "books", content: "Hamlet", start: "1623-01-01", className: "book" },
