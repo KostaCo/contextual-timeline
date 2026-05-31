@@ -102,7 +102,7 @@ window.onload = function () {
             });
         }
         // CASE 2: Item belongs to the "books" group
-        else if (item.group === "books" || item.group === "history") {
+        else if (item.group === "books" || item.group === "history" || item.group === "people") {
             if (item.end) {
                 // Case for books with a range (series)
                 var start = new Date(item.start).getTime();

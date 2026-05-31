@@ -1,7 +1,8 @@
 // Names and tags of groups
 let timelineGroups = [
     { id: "books", content: "📚 Books" },
-    { id: "history", content: "⚔️ History" }
+    { id: "history", content: "⚔️ History" },
+    { id: "people", content: "👤 People" }
 ];
 
 // Items to be displayed in the timeline
@@ -70,6 +71,9 @@ let historicalEvents = [
     { id: 2001, group: "history", content: "Minojska civilizacija", start: "-003000-01-01", end: "-001400-01-01", className: "history" },
     { id: 2002, group: "history", content: "Mikenska civilizacija", start: "-001600-01-01", end: "-001100-01-01", className: "history" },
     { id: 2003, group: "history", content: "Trojanski rat", start: "-001250-01-01", className: "history" }
+]
+let people = [
+    { id: 3000, group: "people", content: "Homer", start: "-000740-01-01", end: "-000660-01-01", className: "person" },
 ];
 
 
@@ -99,4 +103,4 @@ function calculateEraLevels(eras) {
     });
 }
 
-let timelineItems = [...books, ...historicalEvents, ...calculateEraLevels(eras)];
+let timelineItems = [...books, ...historicalEvents, ...calculateEraLevels(eras), ...people];
