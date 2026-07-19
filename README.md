@@ -11,7 +11,7 @@ Built with the [vis.js library](https://visjs.org/), it provides a bird’s‑ey
 ## ✨ Features
 
 *   **Multi‑group timeline** – Books, history, and people are shown in separate horizontal tracks.
-*   **Era backgrounds** – Coloured bands (e.g. Stari vek, Srednji vek) provide historical context.
+*   **Era backgrounds** – Coloured bands (e.g.  The Ancient Period, The Medieval Period) provide historical context.
 *   **Smart clustering** – When too many items overlap in a group, they are automatically packed into +X bubbles to keep the view clean.
 *   **Click to zoom** – Click any book, event, person, era, or cluster to zoom in smoothly.
 *   **Sticky era labels** – Era names stay pinned at the top of the viewport as you scroll.

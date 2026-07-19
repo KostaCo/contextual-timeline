@@ -2,7 +2,7 @@
 let timelineGroups = [
   { id: "books", content: "📚 Books" },
   { id: "history", content: "⚔️ History" },
-  { id: "people", content: "👤 People" }
+  { id: "people", content: "👥 People" }
 ];
 
 let books = [
@@ -58,10 +58,10 @@ let books = [
 
 
 let eras = [
-  { id: 1000, content: "Stari vek", start: "-003500-01-01", end: "0476-01-01", className: "era", type: "background" },
-  { id: 1001, content: "Srednji vek", start: "0476-01-01", end: "1453-01-01", className: "era", type: "background" },
-  { id: 1002, content: "Novi vek", start: "1453-01-01", end: "1914-01-01", className: "era", type: "background" },
-  { id: 1003, content: "Savremeno doba", start: "1914-01-01", end: "2026-01-01", className: "era", type: "background" }
+  { id: 1000, content: "The Ancient Period", start: "-003500-01-01", end: "0476-01-01", className: "era", type: "background" },
+  { id: 1001, content: "The Medieval Period", start: "0476-01-01", end: "1453-01-01", className: "era", type: "background" },
+  { id: 1002, content: "The Modern Period", start: "1453-01-01", end: "1914-01-01", className: "era", type: "background" },
+  { id: 1003, content: "The Contemporary Period", start: "1914-01-01", end: "2026-01-01", className: "era", type: "background" }
 ];
 
 
