@@ -16,7 +16,7 @@ Built with the [vis.js library](https://visjs.org/), it provides a bird’s‑ey
 *   **Click to zoom** – Click any book, event, person, era, or cluster to zoom in smoothly.
 *   **Sticky era labels** – Era names stay pinned at the top of the viewport as you scroll.
 *   **“Show All Data”** – One‑click reset to the full timeline view.
-*   **Works with BC/BCE dates** – Fully supports dates before year 0.
+*   **Works with BC/BCE dates** – Fully supports dates before year 1.
 
 ## 🚀 How to Use
 
