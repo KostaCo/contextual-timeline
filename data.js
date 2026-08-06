@@ -53,7 +53,8 @@ let books = [
   { id: 45, group: "books", content: "The Sandman (Gaiman)", start: "1988-01-01", end: "1996-12-31", className: "book" },
   { id: 46, group: "books", content: "Harry Potter serijal", start: "1997-06-26", end: "2016-12-31", className: "book" },
   { id: 47, group: "books", content: "Grčki mitovi", start: "-001400-01-01", end: "-001100-01-01", className: "book" },
-  { id: 48, group: "books", content: "Ilijada", start: "-000700-01-01", className: "book" }
+  { id: 48, group: "books", content: "Ilijada", start: "-000700-01-01", className: "book" },
+  { id: 49, group: "books", content: "Odiseja", start: "-000699-01-01", className: "book" }
 ];
 
 
