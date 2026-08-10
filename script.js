@@ -1,6 +1,6 @@
 let timeline;
 let items;
-const MAX_VISIBLE_ROWS = 3;
+const MAX_VISIBLE_ROWS = 4;
 const CARD_WIDTH_PX = 20;
 
 function dateToDecimalYear(dateVal) {

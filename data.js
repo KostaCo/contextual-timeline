@@ -54,7 +54,8 @@ let books = [
   { id: 46, group: "books", content: "Harry Potter serijal", start: "1997-06-26", end: "2016-12-31", className: "book" },
   { id: 47, group: "books", content: "Grčki mitovi", start: "-001400-01-01", end: "-001100-01-01", className: "book" },
   { id: 48, group: "books", content: "Ilijada", start: "-000700-01-01", className: "book" },
-  { id: 49, group: "books", content: "Odiseja", start: "-000699-01-01", className: "book" }
+  { id: 49, group: "books", content: "Odiseja", start: "-000699-01-01", className: "book" },
+  { id: 50, group: "books", content: "Agamemnon", start: "-000458-01-01", className: "book" },
 ];
 
 
@@ -70,10 +71,14 @@ let historicalEvents = [
   { id: 2000, group: "history", content: "Jevreji naseljavaju Hanan", start: "-001200-01-01", end: "-001030-01-01", className: "history" },
   { id: 2001, group: "history", content: "Minojska civilizacija", start: "-003000-01-01", end: "-001400-01-01", className: "history" },
   { id: 2002, group: "history", content: "Mikenska civilizacija", start: "-001600-01-01", end: "-001100-01-01", className: "history" },
-  { id: 2003, group: "history", content: "Trojanski rat", start: "-001250-01-01", className: "history" }
+  { id: 2003, group: "history", content: "Trojanski rat", start: "-001250-01-01", className: "history" },
+  { id: 2004, group: "history", content: "Neolitska civilizacija na Malti", start: "-003250-01-01", end: "-002250-01-01", className: "history" },
+  { id: 2005, group: "history", content: "Potop u Mesopotamiji", start: "-002900-01-01", className: "history" },
+  { id: 2006, group: "history", content: "Sumerska civilizacija", start: "-003250-01-01", end: "-002350-01-01", className: "history" },
 ];
 
 
 let people = [
-  { id: 3000, group: "people", content: "Homer", start: "-000740-01-01", end: "-000660-01-01", className: "person" }
+  { id: 3000, group: "people", content: "Homer", start: "-000740-01-01", end: "-000660-01-01", className: "person" },
+  { id: 3001, group: "people", content: "Eshil", start: "-000525-01-01", end: "-000456-01-01", className: "person" },
 ];
